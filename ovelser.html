@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Stranda</title>
+    <link rel="icon" type="image/x-icon" href="https://media.discordapp.net/attachments/610028891687354369/1082204308776431646/stranda_icon.png?width=425&height=526">
+</head>
+<body>
+  <div>       <!--bruker unsorted list med css for å lage en nav bar-->
+    <ul>    
+        <img class="logo" src="https://media.discordapp.net/attachments/1028741303950901310/1072135327881367653/Stranda_Treningspark_Logo_markus_.png?width=1440&height=317" alt="">
+        <li><a href="info.html">info</a></li>
+       
+        <div class="dropdown">
+          <button class="dropbtn">Linker</button>
+          <div class="dropdown-content">
+            <a href="https://www.halden.kommune.no/">Halden kommune</a>
+            <a href="https://viken.no/halden-vgs/">Halden VGS</a>
+            <a href="https://viken.no/">Viken</a>
+          </div>
+        </div>
+        
+        <div class="dropdown">
+          <button class="dropbtn">Forskjellige Apperater</button>
+          <div class="dropdown-content">
+            <a href="chestpress.html">Chest press</a>
+            <a href="shoulderpress.html">Shoulder press</a>
+            <a href="pulldown.html">Pulldown</a>
+          </div>
+        </div>
+        <li><a href="index.html">Hjem</a></li>
+        
+    </ul>
+</div>
+
+
+    <div class="ned">
+      <button id="dark-mode-button">Lys av/på</button>
+    </div>
+    <div class="ned">
+      <button id="text-size-button">Stor/Liten tekst</button>
+
+    <br>
+    <br>
+    <label>Velg en øvelse!</label>
+    <select id="ovelse"> <!-- setter id til select taggen-->
+      <option value=1>-- --</option> <!--setter en value på option-->
+      <option value=2>Pullups</option>
+      <option value=3>Pushups</option>
+      <option value=4>situps</option>
+    </select>
+    <button type="button" id="knapp" onclick="visOvls1()">Velg øvelse</button> <!--npr du trykker på knappen kjører funksjonen VisOvls1-->
+    </div>
+
+    <div id="ovls">
+        <p id="txt">
+        </p>
+        <img class="ovels" id="bild" src="" alt="">
+    </div>
+
+    <script>
+              window.onload = function() {
+  // dark mode
+  var darkModeButton = document.getElementById("dark-mode-button");
+  darkModeButton.onclick = function() {
+    var isDarkMode = localStorage.getItem("dark-mode") === "true";
+    if (isDarkMode) {
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("dark-mode", "false");
+    } else {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("dark-mode", "true");
+    }
+  };
+
+  // tekst størrelse
+  var textSizeButton = document.getElementById("text-size-button");
+  textSizeButton.onclick = function() {
+    var isLargeText = localStorage.getItem("large-text") === "true";
+    if (isLargeText) {
+      document.body.classList.remove("large-text");
+      localStorage.setItem("large-text", "false");
+    } else {
+      document.body.classList.add("large-text");
+      localStorage.setItem("large-text", "true");
+    }
+  };
+
+  // husker om dark mode/tekst er toggla
+  var isDarkMode = localStorage.getItem("dark-mode") === "true";
+  if (isDarkMode) {
+    document.body.classList.add("dark-mode");
+  } else {
+    document.body.classList.remove("dark-mode");
+  }
+
+  var isLargeText = localStorage.getItem("large-text") === "true";
+  if (isLargeText) {
+    document.body.classList.add("large-text");
+  } else {
+    document.body.classList.remove("large-text");
+  }
+};
+
+
+    </script>
+
+    <script>
+      // if komandoer som sjekker hvilken value option har og endrer bilde og tekst etter det
+        function visOvls1(){ 
+            let select = document.getElementById("ovelse");
+            let tall = select.options[select.selectedIndex].value;
+            if (tall == 1){
+            document.getElementById("txt").innerHTML = ("")
+            document.getElementById("bild").src = ("")
+            }
+            if (tall == 2){
+            document.getElementById("txt").innerHTML = ("Pull ups er en effektiv øvelse for å styrke øvre del av kroppen, spesielt rygg, skuldre og armer.")
+            document.getElementById("bild").src = ("https://media.discordapp.net/attachments/1044164433666117752/1082565578205712415/IMG_0238.jpg?width=435&height=580")
+            document.getElementById("bild").alt = ("bilde av gutt som gjør pullups")
+        }  
+        if (tall == 3){
+            document.getElementById("txt").innerHTML = ("Push ups er en effektiv øvelse for å styrke overkroppen, spesielt bryst, skuldre og armer.")
+            document.getElementById("bild").src = ("https://media.discordapp.net/attachments/1044164433666117752/1082565577173913640/IMG_0235.jpg?width=435&height=580")
+            document.getElementById("bild").alt = ("bilde av gutt som gjør pushups")
+            } 
+        
+            if (tall == 4){
+            document.getElementById("txt").innerHTML = ("Situps er en øvelse som styrker magemusklene.")
+            document.getElementById("bild").src = ("https://media.discordapp.net/attachments/1044164433666117752/1082565577656250389/IMG_0237.jpg?width=435&height=580")
+            document.getElementById("bild").alt = ("bilde av gutt som gjør situps")
+            }
+        }
+           
+      </script>
+    

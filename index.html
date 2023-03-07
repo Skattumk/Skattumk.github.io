@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="nb"> <!--setter side språk til norsk-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Stranda</title>
+    <link rel="icon" type="image/x-icon" href="https://media.discordapp.net/attachments/610028891687354369/1082204308776431646/stranda_icon.png?width=425&height=526">
+</head>
+<body>
+    <div>       <!--bruker unsorted list med css for å lage en nav bar-->
+        <ul>    
+            <img class="logo" src="https://media.discordapp.net/attachments/1028741303950901310/1072135327881367653/Stranda_Treningspark_Logo_markus_.png?width=1440&height=317" alt="">
+            <li><a href="info.html">Info</a></li>
+           
+            <div class="dropdown">
+              <button class="dropbtn">Linker</button>
+              <div class="dropdown-content">
+                <a href="https://www.halden.kommune.no/">Halden kommune</a>
+                <a href="https://viken.no/halden-vgs/">Halden VGS</a>
+                <a href="https://viken.no/">Viken</a>
+              </div>
+            </div>
+            
+            <div class="dropdown">
+              <button class="dropbtn">Forskjellige Apperater</button>
+              <div class="dropdown-content">
+                <a href="chestpress.html">Chest press</a>
+                <a href="shoulderpress.html">Shoulder press</a>
+                <a href="pulldown.html">Pulldown</a>
+              </div>
+            </div>
+            <li><a href="ovelser.html">Øvelser</a></li>
+            
+        </ul>
+    </div>
+
+      <!--Knapper for å endre på tekst størrelse og skru av og på dark mode-->
+
+    <div class="ned">
+      <button id="dark-mode-button">Lys av/på</button>
+    </div>
+    <div class="ned">
+      <button id="text-size-button">Stor/Liten tekst</button>
+    </div>
+
+    <h3 class="senter">Vekommen til Stranda treningspark!</h3>
+    <p class="senter">
+       Vi er glade for å kunne tilby deg en nettside <br>
+       dedikert til trening og helse. Her vil du finne <br>
+        informasjon om vår treningspark og treningstilbud. <br>
+      Vi håper du vil finne all den informasjonen du trenger <br>
+       for å komme i form og oppnå dine treningsmål.
+    </p>
+      
+    <script>
+        window.onload = function() {
+    // dark mode
+  var darkModeButton = document.getElementById("dark-mode-button");
+  darkModeButton.onclick = function() {
+    var isDarkMode = localStorage.getItem("dark-mode") === "true";
+    if (isDarkMode) {
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("dark-mode", "false");
+    } else {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("dark-mode", "true");
+    }
+  };
+
+ // tekst størrelse
+  var textSizeButton = document.getElementById("text-size-button");
+  textSizeButton.onclick = function() {
+    var isLargeText = localStorage.getItem("large-text") === "true";
+    if (isLargeText) {
+      document.body.classList.remove("large-text");
+      localStorage.setItem("large-text", "false");
+    } else {
+      document.body.classList.add("large-text");
+      localStorage.setItem("large-text", "true");
+    }
+  };
+
+  // husker om dark mode/tekst er toggla
+  var isDarkMode = localStorage.getItem("dark-mode") === "true";
+  if (isDarkMode) {
+    document.body.classList.add("dark-mode");
+  } else {
+    document.body.classList.remove("dark-mode");
+  }
+
+  var isLargeText = localStorage.getItem("large-text") === "true";
+  if (isLargeText) {
+    document.body.classList.add("large-text");
+  } else {
+    document.body.classList.remove("large-text");
+  }
+};
+
+
+    </script>
+            <!--slideshow tatt fra w3 schools-->
+     <div>
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="https://media.discordapp.net/attachments/1044164433666117752/1082565576637038662/IMG_0234.jpg?width=773&height=580" style="width:100%" alt="bilde av stranda trenings park">
+          <div class="text">Stranda treningspark ligger ved Porsnes VGS</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="https://media.discordapp.net/attachments/1044164433666117752/1082565576074997811/IMG_0233.jpg?width=773&height=580" style="width:100%" alt="Bilde av kropps vekt apperater">
+          <div class="text">Her kan du trene med kropps vekt</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="https://media.discordapp.net/attachments/1044164433666117752/1082565575433273384/IMG_0232.jpg?width=773&height=580" style="width:100%" alt="trenings apperater med vekter">
+          <div class="text">trenings apperater med vekter</div>
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+        
+        <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+        </script>
+    </div>
+</body>
+</html>

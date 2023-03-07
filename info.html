@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stranda</title>
+    <link rel="icon" type="image/x-icon" href="https://media.discordapp.net/attachments/610028891687354369/1082204308776431646/stranda_icon.png?width=425&height=526">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="kropp">
+  <div>       <!--bruker unsorted list med css for å lage en nav bar-->
+    <ul>    
+        <img class="logo" src="https://media.discordapp.net/attachments/1028741303950901310/1072135327881367653/Stranda_Treningspark_Logo_markus_.png?width=1440&height=317" alt="">
+        <div class="dropdown">
+          <button class="dropbtn">Linker</button>
+          <div class="dropdown-content">
+            <a href="https://www.halden.kommune.no/">Halden kommune</a>
+            <a href="https://viken.no/halden-vgs/">Halden VGS</a>
+            <a href="https://viken.no/">Viken</a>
+          </div>
+        </div>
+        
+        <div class="dropdown">
+          <button class="dropbtn">Forskjellige Apperater</button>
+          <div class="dropdown-content">
+            <a href="chestpress.html">Chest press</a>
+            <a href="shoulderpress.html">Shoulder press</a>
+            <a href="pulldown.html">Pulldown</a>
+          </div>
+        </div>
+        <li><a href="ovelser.html">øvelser</a></li>
+        <li><a href="index.html">Hjem</a></li>
+        
+    </ul>
+</div>
+    <div class="ned">
+      <button id="dark-mode-button">Lys av/på</button>
+    </div>
+    <div class="ned">
+      <button id="text-size-button">Stor/Liten tekst</button>
+    </div>
+    <script>
+             window.onload = function() {
+  //dark mode
+  var darkModeButton = document.getElementById("dark-mode-button");
+  darkModeButton.onclick = function() {
+    var isDarkMode = localStorage.getItem("dark-mode") === "true";
+    if (isDarkMode) {
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("dark-mode", "false");
+    } else {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("dark-mode", "true");
+    }
+  };
+
+// tekst størrelse
+  var textSizeButton = document.getElementById("text-size-button");
+  textSizeButton.onclick = function() {
+    var isLargeText = localStorage.getItem("large-text") === "true";
+    if (isLargeText) {
+      document.body.classList.remove("large-text");
+      localStorage.setItem("large-text", "false");
+    } else {
+      document.body.classList.add("large-text");
+      localStorage.setItem("large-text", "true");
+    }
+  };
+
+// husker om dark mode/tekst er toggla
+  var isDarkMode = localStorage.getItem("dark-mode") === "true";
+  if (isDarkMode) {
+    document.body.classList.add("dark-mode");
+  } else {
+    document.body.classList.remove("dark-mode");
+  }
+
+  var isLargeText = localStorage.getItem("large-text") === "true";
+  if (isLargeText) {
+    document.body.classList.add("large-text");
+  } else {
+    document.body.classList.remove("large-text");
+  }
+};
+
+
+    </script>
+
+   <p>Stranda Treningspark er en utendørs treningspark beliggende ved siden av Porsnes. <br>
+     Parken er åpen for alle og gratis å bruke, noe som gjør den til et ideelt sted for å trene. <br>
+    Parken har et godt utvalg av treningsutstyr, inkludert vekter og ulike treningsmaskiner, som skulderpress, brystpress og beinpress. <br>
+    Dette gjør at besøkende kan trene mange forskjellige muskelgrupper og forbedre sin allround fysikk. <br>
+    <br>
+    I tillegg har parken sykler tilgjengelig for dem som ønsker å trene kondisjonen sin. Uansett om du er nybegynner eller avansert trener, <br>
+    er Stranda Treningspark et flott sted for å oppnå dine treningsmål. <br>
+    Alt i alt er Stranda Treningspark et fremragende treningsalternativ for de som bor i nærheten eller besøker området. Gratis tilgang til utstyr og maskiner,<br>
+    samt muligheten til å trene utendørs, gjør dette til et attraktivt sted for både individuelle treningsøkter og gruppetrening.</p>
+
+    <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8190.02871233606!2d11.3941962!3d59.1239146!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4644133a13c23147%3A0x42ba3c012c675acb!2sStranda%20treningspark!5e0!3m2!1sno!2sno!4v1678216602536!5m2!1sno!2sno"
+     width="600" height="443" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <br>
+    <img class="helpark" src="https://media.discordapp.net/attachments/835179863161569341/1069561638547640330/IMG_6112.jpg?width=875&height=656" alt="Bilde av heleparken">
+
+</body>
+</html>
